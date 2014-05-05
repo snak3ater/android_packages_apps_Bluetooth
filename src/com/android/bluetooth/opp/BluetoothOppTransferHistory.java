@@ -34,6 +34,7 @@ package com.android.bluetooth.opp;
 
 import com.android.bluetooth.R;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
@@ -82,6 +83,12 @@ public class BluetoothOppTransferHistory extends Activity implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        ActionBar mActionBar = getActionBar();
+        if (mActionBar != null) {
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        
         setContentView(R.layout.bluetooth_transfers_page);
         mListView = (ListView)findViewById(R.id.list);
         mListView.setEmptyView(findViewById(R.id.empty));
@@ -159,6 +166,10 @@ public class BluetoothOppTransferHistory extends Activity implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+    
             case R.id.transfer_menu_clear_all:
                 promptClearList();
                 return true;

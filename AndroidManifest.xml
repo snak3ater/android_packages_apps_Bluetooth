@@ -200,7 +200,8 @@
                   android:excludeFromRecents="true"
                   android:theme="@style/Theme.DialogWhenLarge"
                   android:configChanges="orientation|keyboardHidden"
-                  android:enabled="@bool/profile_supported_opp">
+                  android:enabled="@bool/profile_supported_opp"
+                  android:parentActivityName="Settings$BluetoothSettingsActivity">
         </activity>
         <activity android:name=".pbap.BluetoothPbapActivity"
             android:process="@string/process"
