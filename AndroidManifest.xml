@@ -195,6 +195,7 @@
         </activity>
         <activity android:name=".opp.BluetoothOppTransferHistory"
                   android:process="@string/process"
+                  android:icon="@drawable/ic_launcher_share_bluetooth"
                   android:label=""
                   android:excludeFromRecents="true"
                   android:theme="@style/Theme.DialogWhenLarge"
